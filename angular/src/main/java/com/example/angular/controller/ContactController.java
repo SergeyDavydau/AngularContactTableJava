@@ -38,7 +38,7 @@ public class ContactController {
     @GetMapping("/edit/{id}")
     Contact editContact(@PathVariable("id") Long id) {
         Contact contact = contactRepo.findById(id).get();
-        return id != null ? contact : new Contact();
+        return contact != null ? contact : new Contact();
     }
 
     @GetMapping(value = "/delete/{id}")
